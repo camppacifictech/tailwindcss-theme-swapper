@@ -29,7 +29,7 @@ const resolveThemeConfig = (tokenValue, previousKey = []) =>
       ...acc,
       [key]: typeof value === "object"
         ? resolveThemeConfig(value, [...previousKey, key])
-        : `var(--${getTailwindKeyName([...previousKey, key])}, ${value})`
+        : `var(--${getTailwindKeyName([...previousKey, key])})`
     }), {})
 
 module.exports.flatten = flatten
